@@ -527,7 +527,7 @@ Modes.setup = function(opts)
 	})
 
 	---Enable managed UI for current window
-	vim.api.nvim_create_autocmd('WinEnter', {
+	vim.api.nvim_create_autocmd({ 'BufEnter', 'FileType', 'WinEnter' }, {
 		pattern = '*',
 		callback = function()
 			vim.schedule(H.enable_managed_ui)
